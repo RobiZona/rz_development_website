@@ -9,16 +9,16 @@ head:
       content: website
   - - meta
     - property: og:title
-      content: RZCore Docs
+      content: RZ Docs
   - - meta
     - property: og:image
-      content: https://avatars.githubusercontent.com/u/64416274?s=200&v=4
+      content: https://avatars.githubusercontent.com/u/72941167?s=200&v=4
   - - meta
     - name: title
-      content: RZCore Docs
+      content: RZ Docs
   - - meta
     - name: twitter:card
-      content: https://avatars.githubusercontent.com/u/64416274?s=200&v=4
+      content: https://avatars.githubusercontent.com/u/72941167?s=200&v=4
   - - link
     - rel: icon
       type: image/png

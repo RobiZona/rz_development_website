@@ -29,6 +29,7 @@ export default {
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/RobiZona" },
+      { icon: "discord", link: "https://discord.gg/QuX5GYTarA" },
     ],
     sidebar: {
       "/guida": getSidebar({
