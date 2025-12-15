@@ -16,7 +16,7 @@ hero:
   tagline: Probably written at 3AM.
   actions:
     - theme: brand
-      text: Tebex Store.
+      text: Tebex Store
       link: https://robizona.tebex.io/
 features:
   - icon:
