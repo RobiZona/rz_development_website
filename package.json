@@ -38,8 +38,8 @@
     "vue-tsc": "^3.1.1"
   },
   "scripts": {
+    "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "node scripts/generate-categories-metadata.js && vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "type-check": "vue-tsc --noEmit",
     "type-check:watch": "vue-tsc --noEmit --watch"
