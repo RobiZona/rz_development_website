@@ -1,0 +1,211 @@
+/**
+ * VitePress Component Overrides
+ * Custom styling for VitePress built-in components
+ */
+
+/* ========================================
+   Layout Overrides
+   ======================================== */
+
+.content-container {
+  max-width: 100% !important;
+}
+
+.aside {
+  max-width: 250px !important;
+}
+
+.aside-container {
+  width: fit-content !important;
+}
+
+/* ========================================
+   Typography Overrides
+   ======================================== */
+
+/* Page titles in brand color */
+.vp-doc h1,
+h1 {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* ========================================
+   Hero Section Overrides
+   ======================================== */
+
+/* Hero: "RZ" keeps gradient, "Development" in off-white */
+.VPHero .text {
+  color: var(--vp-c-text-1) !important;
+  background: none !important;
+}
+
+/* Hero image (logo) size - slightly larger */
+.VPHero .image-container {
+  max-width: 380px !important;
+  max-height: 380px !important;
+}
+
+.VPHero .image-container .image-bg {
+  max-width: 380px !important;
+  max-height: 380px !important;
+}
+
+.VPHero .image-container img {
+  max-width: 380px !important;
+  max-height: 380px !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Responsive: smaller on mobile devices */
+@media (max-width: 960px) {
+  .VPHero .image-container,
+  .VPHero .image-container .image-bg,
+  .VPHero .image-container img {
+    max-width: 320px !important;
+    max-height: 320px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .VPHero .image-container,
+  .VPHero .image-container .image-bg,
+  .VPHero .image-container img {
+    max-width: 260px !important;
+    max-height: 260px !important;
+  }
+}
+
+/* Feature icons in hero section */
+.icon {
+  background-color: transparent !important;
+}
+
+/* Feature icons color - Dark Mode: #dfdfd6 */
+.VPFeature .vp-icon img,
+.VPFeature .icon img,
+.VPFeature img[src*="/icons/"],
+.vp-feature .vp-icon img,
+.vp-feature .icon img,
+.vp-feature img[src*="/icons/"],
+.VPFeatures .vp-icon img,
+.VPFeatures img[src*="/icons/"] {
+  /* Convert black to #dfdfd6 (RGB: 223, 223, 214) for dark mode */
+  filter: brightness(0) saturate(100%) invert(87.5%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(109%) contrast(87%) !important;
+  opacity: 1 !important;
+}
+
+/* Feature icons color - Light Mode: #3c3c43 */
+html:not(.dark) .VPFeature .vp-icon img,
+html:not(.dark) .VPFeature .icon img,
+html:not(.dark) .VPFeature img[src*="/icons/"],
+html:not(.dark) .vp-feature .vp-icon img,
+html:not(.dark) .vp-feature .icon img,
+html:not(.dark) .vp-feature img[src*="/icons/"],
+html:not(.dark) .VPFeatures .vp-icon img,
+html:not(.dark) .VPFeatures img[src*="/icons/"] {
+  /* Convert black to #3c3c43 (RGB: 60, 60, 67) for light mode */
+  filter: brightness(0) saturate(100%) invert(23.5%) sepia(3%) saturate(0%) hue-rotate(240deg) brightness(94%) contrast(88%) !important;
+  opacity: 1 !important;
+}
+
+/* ========================================
+   Features Section Overrides
+   ======================================== */
+
+/* Remove orange border on feature hover and apply PropGallery-style effect */
+.VPFeature,
+.vp-feature {
+  transition: transform var(--transition-base) ease, box-shadow var(--transition-base) ease !important;
+  border: none !important;
+}
+
+.VPFeature:hover,
+.vp-feature:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+  border: none !important;
+  border-color: transparent !important;
+}
+
+.VPFeature:hover .box,
+.vp-feature:hover .box {
+  border: none !important;
+  border-color: transparent !important;
+}
+
+/* Feature links styling - Clean button without border */
+a.VPFeature .link-text,
+a.link.VPFeature .link-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: var(--space-4) !important;
+  padding: var(--space-3) var(--space-6) !important;
+  color: var(--vp-c-text-1) !important;
+  background-color: var(--vp-c-default-soft) !important;
+  border: none !important;
+  border-radius: var(--radius-lg) !important;
+  cursor: pointer !important;
+  transition: all var(--transition-base) !important;
+  min-height: var(--touch-target-min) !important;
+  font-weight: var(--font-medium) !important;
+  font-size: var(--text-base) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+a.VPFeature:hover .link-text,
+a.link.VPFeature:hover .link-text {
+  background-color: var(--vp-c-brand-1) !important;
+  color: white !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+a.VPFeature:active .link-text,
+a.link.VPFeature:active .link-text {
+  transform: translateY(0) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* Style the text inside */
+a.VPFeature .link-text-value,
+a.link.VPFeature .link-text-value {
+  color: inherit !important;
+}
+
+/* Remove the arrow icon - multiple methods */
+a.VPFeature .link-text svg,
+a.link.VPFeature .link-text svg,
+a.VPFeature .vpi-external-link-icon,
+a.link.VPFeature .vpi-external-link-icon,
+a.VPFeature .link-text::after,
+a.link.VPFeature .link-text::after {
+  display: none !important;
+}
+
+/* Also hide any icon wrapper */
+a.VPFeature .link-text .link-text-icon,
+a.link.VPFeature .link-text .link-text-icon {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  a.VPFeature .link-text,
+  a.link.VPFeature .link-text {
+    padding: var(--space-2) var(--space-4) !important;
+  }
+}
+
+/* ========================================
+   Tabs Plugin Overrides
+   ======================================== */
+
+/* iFrames inside tabs should stay at original size */
+.plugin-tabs--content iframe {
+  max-width: 560px !important;
+  width: 100% !important;
+  height: 315px !important;
+  aspect-ratio: auto !important;
+}

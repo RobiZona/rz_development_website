@@ -1,10 +1,46 @@
-# rz_website
-> This is the repo for RZCore Framework documentation and website!
-## How to setup
-1. Clone this repo
-2. Install Node/NPM [Guide](https://www.guru99.com/download-install-node-js.html)
-3. Open your terminal
-4. Navigate to the project director
-5. Run `npm install`
-6. Run `npm run docs:dev`
-7. You should now be able to see a local version of the site running on `http://localhost:5173/rz_website/`
+# RZ Development Website
+
+Documentation website for **RZ Development** scripts.
+
+Built with **VitePress**.
+
+No CMS, no backend, no runtime dependencies.
+
+---
+
+## What is this?
+
+This repository contains the **documentation website** for RZ Development.
+
+It is used to:
+- document scripts
+- provide installation & configuration guides
+- expose versions and changelogs
+- keep everything static, fast, and predictable
+
+The site is **platform-agnostic**.  
+Scripts are grouped by platform (RedM, FiveM, etc.) inside the documentation.
+
+---
+
+## Tech Stack
+
+- VitePress
+- Vue 3
+- TypeScript
+- Static generation only
+
+---
+
+## Requirements
+
+- Node.js **18+**
+- npm
+
+---
+
+## Local Development
+
+```bash
+npm install
+npm run docs:dev

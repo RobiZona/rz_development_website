@@ -1,25 +1,51 @@
 {
-  "name": "rz-api-docs",
+  "name": "rz_development",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+  "description": "Website for RZ Development.",
+  "author": "emotion06",
+  "license": "GPL-3.0",
+  "keywords": [
+    "vitepress",
+    "documentation",
+    "redm",
+    "fivem",
+    "red-dead-redemption-2",
+    "grand-theft-auto",
+    "grand-theft-auto-v",
+    "gtav",
+    "roleplay",
+    "scripts",
+    "robizona",
+    "rz"
+  ],
+  "homepage": "https://robizona.pages.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RobiZona/rz_development_website.git"
   },
-  "author": "robizona",
-  "license": "ISC",
-  "dependencies": {
-    "@google-translate-select/vue3": "^0.1.1",
-    "@jridgewell/sourcemap-codec": "^1.5.0",
-    "vitepress": "^1.0.0-alpha.72",
-    "vitepress-plugin-auto-sidebar": "^1.0.6",
-    "vue": "^3.2.47"
+  "bugs": {
+    "url": "https://github.com/RobiZona/rz_development_website/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "devDependencies": {
-    "flexsearch": "^0.7.31",
-    "markdown-it": "^13.0.1",
-    "vitepress-plugin-search": "^1.0.4-alpha.19"
+    "sharp": "^0.34.4",
+    "typescript": "^5.7.0",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-tabs": "^0.7.3",
+    "vue-tsc": "^3.1.1"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "node scripts/generate-categories-metadata.js && vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "type-check": "vue-tsc --noEmit",
+    "type-check:watch": "vue-tsc --noEmit --watch"
+  },
+  "dependencies": {
+    "fuse.js": "^7.1.0",
+    "medium-zoom": "^1.1.0"
   }
 }

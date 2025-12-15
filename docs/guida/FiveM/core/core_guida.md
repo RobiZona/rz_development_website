@@ -1,3 +1,0 @@
-# Guida Core
-
-

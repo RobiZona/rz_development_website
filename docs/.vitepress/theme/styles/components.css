@@ -1,0 +1,173 @@
+/**
+ * Custom Component Styles
+ * Reusable component classes for the RZ Development site
+ * 
+ * All values use Design Tokens for consistency and maintainability.
+ */
+
+/* ========================================
+   Button Components
+   ======================================== */
+
+/* Higher specificity to override VitePress link styles */
+a.button-buy,
+a.button-map,
+.vp-doc a.button-buy,
+.vp-doc a.button-map {
+  display: inline-block;
+  padding: 0.3em 0.9em;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  transition: all var(--transition-base);
+  margin: var(--space-2);
+  border: none;
+  cursor: pointer;
+}
+
+a.button-buy,
+.vp-doc a.button-buy {
+  background: var(--vp-button-brand-bg);
+  color: var(--vp-button-brand-text);
+}
+
+a.button-buy:hover,
+.vp-doc a.button-buy:hover {
+  background: var(--vp-button-brand-hover-bg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  color: var(--vp-button-brand-hover-text);
+  text-decoration: none;
+}
+
+a.button-map,
+.vp-doc a.button-map {
+  background: var(--vp-button-alt-bg);
+  color: var(--vp-button-alt-text);
+}
+
+a.button-map:hover,
+.vp-doc a.button-map:hover {
+  background: var(--vp-button-alt-hover-bg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  color: var(--vp-button-alt-hover-text);
+  text-decoration: none;
+}
+
+/* ========================================
+   Scroll Arrow Component
+   ======================================== */
+
+.scroll-arrow-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+.scroll-arrow-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.scroll-arrow {
+  width: var(--touch-target-comfortable);
+  height: var(--touch-target-comfortable);
+  color: var(--vp-c-brand-1);
+  animation: bounce-arrow 2s ease-in-out infinite;
+  transition: color var(--transition-base) ease-out;
+}
+
+/* Smooth bounce animation */
+@keyframes bounce-arrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--space-2));
+  }
+}
+
+/* Subtle hover effect - only color change */
+.scroll-arrow-link:hover .scroll-arrow {
+  color: var(--vp-c-brand-2);
+}
+
+/* Remove focus outline */
+.scroll-arrow-link:focus {
+  outline: none;
+}
+
+/* Responsive sizing */
+@media (min-width: 768px) {
+  .scroll-arrow {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scroll-arrow {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-arrow {
+    animation: none;
+  }
+}
+
+/* ========================================
+   Video Components
+   ======================================== */
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: var(--vp-c-bg-elv, #000);
+  border-radius: var(--radius-lg);
+}
+
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Default: Always responsive iframes */
+iframe {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  border-radius: var(--radius-lg);
+}
+
+/* Tablets: Larger max-width */
+@media (min-width: 768px) {
+  iframe {
+    max-width: 700px;
+  }
+}
+
+/* Desktop: Maximum size */
+@media (min-width: 1024px) {
+  iframe {
+    max-width: 800px;
+  }
+}
